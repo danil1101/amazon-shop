@@ -1,0 +1,175 @@
+@import "../../../index.scss";
+
+.navbar {
+  background: $colorDark !important;
+}
+
+.header {
+  padding: 40px 0;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo {
+  }
+  &__menu {
+  }
+  &__search {
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  &__icon {
+  }
+  &__item {
+  }
+  &__user {
+  }
+}
+
+.search-header {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  &__button {
+    background: $colorOrange;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    img {
+      width: 20px;
+    }
+  }
+  &__input {
+    font-size: 14px;
+    color: $colorWhite;
+    &::placeholder {
+      font-family: inherit;
+      color: $colorWhite;
+    }
+    background: $colorLihtDark;
+    padding: 0 10px;
+    border-right: 2px solid darken($colorWhite, 80%);
+    font-weight: 300;
+    width: 100%;
+  }
+  &__select {
+    font-size: 14px;
+    select {
+      padding: 0 10px;
+      padding-right: 15px;
+      position: relative;
+      color: $colorWhite;
+      height: 100%;
+      display: block;
+      line-height: 1.3;
+      box-sizing: border-box;
+      background-color: $colorLihtDark;
+
+      &::-ms-expand {
+        display: none;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $colorGray;
+  outline: 2px solid $colorOrange !important;
+}
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $colorOrange;
+  border-radius: 6px;
+  padding: 8px 10px;
+  position: relative;
+  span {
+    position: absolute;
+    color: #000;
+    background: $colorWhite;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 5px;
+    top: -4px;
+    right: -2px;
+  }
+  &:hover {
+    background: lighten($colorOrange, 5%);
+  }
+  img {
+    width: 20px;
+  }
+}
+.location {
+  display: flex;
+  line-height: 120%;
+  gap: 10px;
+  img {
+    width: 20px;
+  }
+  strong {
+    color: $colorOrange;
+    font-weight: 600;
+  }
+}
+.icon-menu {
+  display: none;
+  @media (max-width: 768.98px) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 5;
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: #000;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - rem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
