@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
 function Header() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    console.log(position.coords.latitude, position.coords.longitude);
+  });
+
   return (
     <header className="header">
       <div className="header__container">
@@ -18,9 +22,7 @@ function Header() {
           <input className="search-header__input" placeholder="Search..." />
           <div className="search-header__select select">
             <select name="form[]" data-class-modif="form">
-              <option value="1" selected>
-                All categories
-              </option>
+              <option value="1">All categories</option>
               <option value="2">Пункт №2</option>
               <option value="3">Пункт №3</option>
               <option value="4">Пункт №4</option>
@@ -35,7 +37,7 @@ function Header() {
             <img src={location} alt="" />
             <span>
               Delivery to <br />
-              <strong>{"London"}</strong>
+              <strong>{""}</strong>
             </span>
           </div>
           <Link to="/cart" className="menu__item cart">
@@ -46,9 +48,6 @@ function Header() {
             <span></span>
           </Link>
         </div>
-        <button type="button" className="menu__icon icon-menu">
-          <span></span>
-        </button>
       </div>
     </header>
   );
