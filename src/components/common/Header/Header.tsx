@@ -5,7 +5,6 @@ import location from "../../../assets/location.svg";
 import search from "../../../assets/search.svg";
 import "./Header.scss";
 import { Link } from "react-router-dom";
-import Button from "../Button/Button";
 
 function Header() {
   const [city, SetCity] = useState("");
