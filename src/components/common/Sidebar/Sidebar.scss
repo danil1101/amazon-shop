@@ -1,0 +1,64 @@
+@import "../../../index.scss";
+
+.sidebar {
+  flex: 0 1 20%;
+  min-height: 100vh;
+  border-top: 1px solid $colorGray;
+  &__body {
+    padding: 30px;
+    padding-left: 20px;
+  }
+  &__item {
+    &.is-primary {
+      font-weight: 500;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      position: relative;
+
+      &::before {
+        content: "";
+        margin-right: 8px;
+        background: url(../../../assets/primary.svg);
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        position: relative;
+        left: 3px;
+        top: 1px;
+      }
+
+      background: $colorLihtDark;
+      color: $colorOrange;
+      font-size: 17px;
+    }
+    position: relative;
+    text-align: left;
+    border-radius: 8px;
+    &:hover {
+      background: $colorLihtDark;
+    }
+    transition: all 0.1s ease 0s;
+    padding: 12px;
+    font-weight: 400;
+  }
+  &__row {
+    margin-left: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.hover::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  top: 11px;
+  height: 16px;
+  border-radius: 6px;
+  display: block;
+  left: 0;
+  background-color: $colorOrange;
+}

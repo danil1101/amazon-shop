@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../../assets/logo.png";
 import cart from "../../../assets/cart.svg";
 import location from "../../../assets/location.svg";
@@ -8,8 +8,16 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
 function Header() {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    console.log(position.coords.latitude, position.coords.longitude);
+  const [city, SetCity] = useState("");
+
+  useEffect(() => {
+    fetch("https://api.ipregistry.co/?key=8s8kgbzuac2woc5z")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (payload) {
+        SetCity(payload?.location?.city);
+      });
   });
 
   return (
@@ -37,7 +45,7 @@ function Header() {
             <img src={location} alt="" />
             <span>
               Delivery to <br />
-              <strong>{""}</strong>
+              <strong>{city}</strong>
             </span>
           </div>
           <Link to="/cart" className="menu__item cart">
