@@ -3,14 +3,15 @@
 .sidebar {
   flex: 0 1 20%;
   min-height: 100vh;
-  border-top: 1px solid $colorGray;
+  border-right: 2px solid $colorLightGray;
   &__body {
-    padding: 30px;
-    padding-left: 20px;
+    padding: 20px;
+    padding-left: 0;
+    color: $colorGray;
   }
   &__item {
     &.is-primary {
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       width: 100%;
       align-items: center;
@@ -28,15 +29,15 @@
         top: 1px;
       }
 
-      background: $colorLihtDark;
-      color: $colorOrange;
+      background: $colorLihtOrange;
+      color: $colorDarkGray;
       font-size: 17px;
     }
     position: relative;
     text-align: left;
     border-radius: 8px;
     &:hover {
-      background: $colorLihtDark;
+      background: $colorLihtOrange;
     }
     transition: all 0.1s ease 0s;
     padding: 12px;
@@ -54,7 +55,7 @@
 .hover::after {
   content: "";
   position: absolute;
-  width: 2px;
+  width: 3px;
   top: 11px;
   height: 16px;
   border-radius: 6px;

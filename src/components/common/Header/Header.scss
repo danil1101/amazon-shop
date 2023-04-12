@@ -1,11 +1,8 @@
 @import "../../../index.scss";
 
-.navbar {
-  background: $colorDark !important;
-}
-
 .header {
-  padding: 25px 0;
+  padding: 20px 0;
+  border-bottom: 2px solid $colorLightGray;
   &__container {
     display: flex;
     justify-content: space-between;
@@ -13,6 +10,8 @@
     flex-wrap: wrap;
   }
   &__logo {
+    position: relative;
+    top: 5px;
     @media (max-width: 992.98px) {
       order: 1;
     }
@@ -50,11 +49,12 @@
   }
   display: flex;
   min-height: 40px;
+  border: 2px solid $colorLightGray;
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
   max-width: 500px;
-  background: $colorLihtDark;
+  background: none;
   &__button {
     background: $colorOrange;
     padding: 0 10px;
@@ -68,14 +68,12 @@
   }
   &__input {
     font-size: 14px;
-    color: $colorWhite;
     &::placeholder {
       font-family: inherit;
-      color: $colorWhite;
     }
-    background: $colorLihtDark;
+    background: none;
     padding: 0 10px;
-    border-right: 2px solid darken($colorWhite, 50%);
+    border-right: 2px solid $colorDarkWhite;
     font-weight: 300;
     width: 100%;
   }
@@ -85,22 +83,20 @@
     }
     font-size: 14px;
     position: relative;
-    margin: 0 8px;
-    margin-right: 20px;
+
     select {
+      padding: 0 10px;
       position: relative;
-      color: $colorWhite;
+      color: inherit;
       height: 100%;
       display: block;
+      border: none;
       appearance: none;
       line-height: 1.3;
-      box-sizing: border-box;
-      background-color: $colorLihtDark;
-      option {
-        padding: 5px;
-      }
-      &:focus {
-        outline: none;
+      outline: none;
+      background-color: none;
+      select::-ms-expand {
+        display: none;
       }
     }
   }
@@ -109,7 +105,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: $colorGray;
+  background: $colorLihtOrange;
   outline: 2px solid $colorOrange !important;
 }
 .cart {
@@ -119,14 +115,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $colorOrange;
   border-radius: 6px;
   padding: 8px 10px;
+  transition: all 0.2s ease 0s;
+  box-shadow: 0px 0px 10px darken($colorLightGray, 15%);
   position: relative;
   span {
     position: absolute;
-    color: #000;
-    background: $colorWhite;
+    color: $colorWhite;
+    background: $colorOrange;
     border-radius: 50%;
     font-size: 12px;
     font-weight: 500;
@@ -135,7 +132,7 @@
     right: -2px;
   }
   &:hover {
-    background: lighten($colorOrange, 5%);
+    box-shadow: 0px 0px 10px darken($colorLightGray, 5%);
   }
   img {
     width: 20px;
@@ -145,6 +142,7 @@
   @media (max-width: 992.98px) {
     display: none;
   }
+  font-weight: 400;
   display: flex;
   line-height: 120%;
   gap: 10px;

@@ -1,9 +1,12 @@
 @import "../../index.scss";
 .home {
-  display: flex;
-  justify-content: space-between;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
   &__body {
     flex: 1 1 auto;
-    background: $colorWhite;
+    padding: 20px;
+    background: $colorDarkWhite;
   }
 }

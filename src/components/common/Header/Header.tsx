@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logo.svg";
 import cart from "../../../assets/cart.svg";
 import location from "../../../assets/location.svg";
 import search from "../../../assets/search.svg";
