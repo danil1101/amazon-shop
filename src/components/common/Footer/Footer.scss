@@ -1,0 +1,117 @@
+@import "../../../index.scss";
+
+.footer {
+  padding: 40px 0;
+  padding-bottom: 20px;
+  background: $colorDarkWhite;
+  min-width: 100vw;
+  &__copyright {
+    border-top: 3px solid $colorLightGray;
+    text-align: center;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  &__container {
+    flex-direction: column;
+    display: flex;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    @media (max-width: 768.98px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  &__info {
+    margin-bottom: 40px;
+    @media (max-width: 1197.98px) {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
+  &__column {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    @media (max-width: 1197.98px) {
+      max-width: 150px;
+    }
+  }
+}
+
+.cards {
+  width: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  @media (max-width: 1197.98px) {
+    align-items: start;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    > li {
+      @media (max-width: 768.98px) {
+        margin-top: 10px;
+      }
+    }
+    img {
+      width: 100%;
+      width: 55px;
+    }
+  }
+}
+.column {
+  &__item {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.1s ease 0s;
+    &:hover {
+      color: darken($colorGray, 20%);
+    }
+  }
+  &__list {
+    line-height: 180%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  &__title {
+    font-weight: 600;
+    margin-bottom: 20px;
+    @media (max-width: 768.98px) {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+.info {
+  padding-right: 80px;
+  &__logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__text {
+    line-height: 140%;
+    width: 100%;
+    max-width: 400px;
+    font-weight: 400;
+  }
+}

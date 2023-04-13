@@ -5,8 +5,10 @@ import "./Home.scss";
 function Home() {
   return (
     <div className="home">
-      <Sidebar />
-      <div className="home__body">Home</div>
+      <div className="home__container">
+        <Sidebar />
+        <div className="home__body"></div>
+      </div>
     </div>
   );
 }
