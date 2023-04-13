@@ -19,6 +19,16 @@ function Header() {
       });
   });
 
+  const items = [
+    "Category",
+    "Category",
+    "Category",
+    "Category",
+    "Category",
+    "Category",
+    "Category",
+  ];
+
   return (
     <header className="header">
       <div className="header__container">
