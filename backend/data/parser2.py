@@ -1,7 +1,7 @@
 import json
 from bs4 import BeautifulSoup
 
-category = "home_kitchen"
+category = "drinks"
 
 items = []
 for i in range(1, 3):
@@ -18,7 +18,7 @@ for i in range(1, 3):
                 link = img.get("src")
 
                 # Try to find the title span
-                title_span = div.find("span", {"class": "a-size-medium a-color-base a-text-normal"})
+                title_span = div.find("span", {"class": "a-size-base-plus a-color-base a-text-normal"})
                 if title_span:
                     title = title_span.text.strip()
                 else:
